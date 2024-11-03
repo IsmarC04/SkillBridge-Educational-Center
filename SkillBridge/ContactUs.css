@@ -1,0 +1,43 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+   margin: 0;}
+
+
+.first {
+    background-color:#000B58;
+    text-align: center;}
+
+
+.select{color: white;
+margin: 15px;}
+
+
+fieldset{
+    border: 5px solid #006A67;
+    border-radius: 20px;
+    padding: 20px;
+margin-bottom: 40px;}
+
+footer{ background-color:#FFF4B7 ;
+padding: 10px;}
+
+label{
+    display: block;
+    margin-bottom: 10px;
+    
+}
+input, textarea{
+    border: 2px solid #006A67;
+    border-radius: 3px;
+    width: 100%;
+    height: 30px;
+}
+button{
+    width: 10%;
+    height: 30px;
+    border: 3px solid #006A67;
+    border-radius: 10px;
+    margin-left: 47%;
+}
+
+#message{margin-top: opx;}
