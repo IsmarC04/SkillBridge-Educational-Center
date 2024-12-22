@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="stylesheet" href="courses.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script> <!-- Add validate.js library -->
+    <style>
+        /* Simple styling for the form validation feedback */
+        .error {
+            color: red;
+        }
+
+        #password-strength {
+            display: none;
+            width: 100%;
+            height: 5px;
+            background-color: #ddd;
+        }
+
+        #password-strength .strength {
+            height: 100%;
+            width: 0;
+            background-color: red;
+        }
+
+        .strength-weak {
+            background-color: red;
+        }
+
+        .strength-medium {
+            background-color: orange;
+        }
+
+        .strength-strong {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="first">
+        <h1>
+            <img class="first" src="/SkillBridge logo 2.jpg" alt="LOGO" width="450" height="150">
+        </h1>
+
+        <a href="http://127.0.0.1:5500/SkillBridge/Assignment1.html">Home</a>
+        <a href="http://127.0.0.1:5500/SkillBridge/aboutus.html">About Us</a>
+        <a href="http://127.0.0.1:5500/SkillBridge/ContactUs.html">Contact Us</a>
+        <a href="http://127.0.0.1:5500/SkillBridge/Courses.html">Courses</a>
+        <hr>
+    </div>
+    <h1 style="text-align: center;">Courses</h1>
+
+    <fieldset id="firstf"> <b>1. Introduction to Computer Technology</b>
+        <ul>
+            <li><b>Description:</b>This course provides an introduction to basic computer concepts...</li>
+            <li><b>Duration:</b> 4 weeks</li>
+            <li><b>Target Group:</b> Beginners</li>
+            <li><b>Price:</b> 150KM</li>
+        </ul>
+    </fieldset>
+    <!-- Add other courses -->
+
+    <p style="text-align: center;"><b>If you would like to register for a course, please fill out the information sheet provided below.</b></p>
+
+    <form id="course-form" onsubmit="return validateForm()">
+        <fieldset id="fifthf">
+            <label for="name">Name and Surname:</label>
+            <input type="text" id="name" name="name" required>
+
+            <br><br>
+
+            <label for="email">Email address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <br><br>
+
+            <label for="phone">Phone number:</label>
+            <input type="tel" id="phone" name="phone" pattern="^\d{10}$" placeholder="Enter 10-digit number" required>
+
+            <br><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required onkeyup="checkPasswordStrength()">
+
+            <div id="password-strength">
+                <div class="strength" id="strength"></div>
+            </div>
+
+            <br><br>
+
+            <label for="courses">Select Course:</label>
+            <select id="courses" name="courses" required>
+                <option value="">Select a course</option>
+                <option value="1. Introduction to Computer Technology">1. Introduction to Computer Technology</option>
+                <option value="2. Programming for Beginners">2. Programming for Beginners</option>
+                <option value="3. Web Development">3. Web Development</option>
+                <option value="4. Graphic Design">4. Graphic Design</option>
+            </select>
+
+            <br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" cols="40" required></textarea>
+
+            <br><br>
+
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+
+    <footer><p style="text-align: center">© 2024 SkillBridge Education Centre. All rights reserved.</p></footer>
+
+    <script>
+        // Password Strength Check
+        function checkPasswordStrength() {
+            var strengthMeter = document.getElementById('strength');
+            var password = document.getElementById('password').value;
+            var strength = 0;
+
+            if (password.length > 7) strength += 1;
+            if (/[A-Z]/.test(password)) strength += 1;
+            if (/[a-z]/.test(password)) strength += 1;
+            if (/\d/.test(password)) strength += 1;
+            if (/[^A-Za-z0-9]/.test(password)) strength += 1;
+
+            var strengthClass = '';
+            if (strength === 1) strengthClass = 'strength-weak';
+            else if (strength === 2) strengthClass = 'strength-medium';
+            else if (strength === 3 || strength === 4) strengthClass = 'strength-strong';
+
+            strengthMeter.className = 'strength ' + strengthClass;
+            strengthMeter.style.width = strength * 20 + '%';
+            document.getElementById('password-strength').style.display = 'block';
+        }
+
+        // Form Validation
+        function validateForm() {
+            var form = document.getElementById('course-form');
+            var name = form['name'].value;
+            var email = form['email'].value;
+            var phone = form['phone'].value;
+            var dob = form['dob'].value;
+            var password = form['password'].value;
+
+            // Validate Name
+            if (!name) {
+                alert('Name is required!');
+                return false;
+            }
+
+            // Validate Email
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!email.match(emailPattern)) {
+                alert('Please enter a valid email address!');
+                return false;
+            }
+
+            // Validate Phone Number
+            var phonePattern = /^\d{10}$/;
+            if (!phone.match(phonePattern)) {
+                alert('Please enter a valid 10-digit phone number!');
+                return false;
+            }
+
+            // Validate Password
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters long!');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

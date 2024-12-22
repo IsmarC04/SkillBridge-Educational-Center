@@ -53,6 +53,33 @@
             </fieldset>
         </div>
     <br>
-    <footer style="background-color: aqua;" ><p style="text-align: center;">© 2024 SkillBridge Education Centre. All rights reserved.</p></footer>
+
+    <div class="button">
+   
+        <button onclick="changeTheme('dark')">Dark Theme</button>
+        <button onclick="changeTheme('light')">Light Theme</button>
+        <button onclick="changeFontSize('small')">Small Font</button>
+        <button onclick="changeFontSize('large')">Large Font</button>
+        </div>
+        <footer style="background-color: aqua;" ><p style="text-align: center;">© 2024 SkillBridge Education Centre. All rights reserved.</p></footer>
+<script>function changeTheme(theme) {
+    if (theme === 'dark') {
+        document.body.style.backgroundColor = "#333";
+        document.body.style.color = "#fff";
+    } else {
+        document.body.style.backgroundColor = "#fff";
+        document.body.style.color = "#000";
+    }
+}
+
+function changeFontSize(size) {
+    if (size === 'small') {
+        document.body.style.fontSize = "12px";
+    } else {
+        document.body.style.fontSize = "18px";
+    }
+}
+</script>
+        
 </body>
 </html>

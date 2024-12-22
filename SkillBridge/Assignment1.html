@@ -21,9 +21,15 @@
     
     <h3 style="text-align: center;"><b>Welcome to SkillBridge Education Centre</b></h3>
     <div class="gallery">
-        <img src="/photo 1.jpg" alt="classroom"> <img src="/photo 2.jpg" alt="classroom" height="200">
+        <img src="/photo 1.jpg" alt="classroom" class="thumbnail" onclick="openModal('/photo 1.jpg')">
+        <img src="/photo 2.jpg" alt="classroom" class="thumbnail" onclick="openModal('/photo 2.jpg')">
+        
     </div>
-
+     
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
 
 
     <p style="text-align: center; margin: 2cm;">At SkillBridge Education Centre, we are delighted to welcome you and your family! We understand that choosing the right educational environment for your child is a significant decision. We are honored to be a part of your child's learning journey and to contribute to their growth and development.<br><br>
@@ -33,7 +39,7 @@
         Together, as a united community, we will work to inspire and empower your child, helping them reach their fullest potential. Welcome to our family at SkillBridge Education Centre—where every child is a shining star!
     </p>
 
-    <div class="get in touch">
+    <div class="get-in-touch">
 
         <h2 style="text-align: center;"> Enrol your child now!</h2>
         
@@ -46,9 +52,58 @@
         </p>
         </fieldset>
 
+    <div class="button">
+   
+    <button onclick="changeTheme('dark')">Dark Theme</button>
+    <button onclick="changeTheme('light')">Light Theme</button>
+    <button onclick="changeFontSize('small')">Small Font</button>
+    <button onclick="changeFontSize('large')">Large Font</button>
+    </div>
+    
     <div id="last">
-    <footer ><p>© 2024 SkillBridge Education Centre. All rights reserved.</p></footer>
- 
+        <footer><p>© 2024 SkillBridge Education Centre. All rights reserved.</p></footer>
+    </div>
+
+    <script>
+        
+        function openModal(imageSrc) {
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('imageModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        
+        function toggleContent(id) {
+            const section = document.getElementById(id);
+            section.style.display = (section.style.display === "none") ? "block" : "none";
+        }
+
+        
+        function changeTheme(theme) {
+            if (theme === 'dark') {
+                document.body.style.backgroundColor = "#333";
+                document.body.style.color = "#fff";
+            } else {
+                document.body.style.backgroundColor = "#fff";
+                document.body.style.color = "#000";
+            }
+        }
+
+        function changeFontSize(size) {
+            if (size === 'small') {
+                document.body.style.fontSize = "12px";
+            } else {
+                document.body.style.fontSize = "18px";
+            }
+        }
+
+      
+    </script>
+</body>
+</html>
 
 
 </body>

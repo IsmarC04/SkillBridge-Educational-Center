@@ -92,9 +92,60 @@
 
         <button typ="submit">Submit</button>
     </fieldset>
+
+    <div class="button">
+   
+        <button onclick="changeTheme('dark')">Dark Theme</button>
+        <button onclick="changeTheme('light')">Light Theme</button>
+        <button onclick="changeFontSize('small')">Small Font</button>
+        <button onclick="changeFontSize('large')">Large Font</button>
+        </div>
+        
+        <div id="last">
+            <footer><p style="text-align: center">© 2024 SkillBridge Education Centre. All rights reserved.</p></footer>
+        </div>
+    
+        <script>
+            
+            function openModal(imageSrc) {
+                document.getElementById('modalImage').src = imageSrc;
+                document.getElementById('imageModal').style.display = 'block';
+            }
+    
+            function closeModal() {
+                document.getElementById('imageModal').style.display = 'none';
+            }
+    
+            
+            function toggleContent(id) {
+                const section = document.getElementById(id);
+                section.style.display = (section.style.display === "none") ? "block" : "none";
+            }
+    
+            
+            function changeTheme(theme) {
+                if (theme === 'dark') {
+                    document.body.style.backgroundColor = "#333";
+                    document.body.style.color = "#fff";
+                } else {
+                    document.body.style.backgroundColor = "#fff";
+                    document.body.style.color = "#000";
+                }
+            }
+    
+            function changeFontSize(size) {
+                if (size === 'small') {
+                    document.body.style.fontSize = "12px";
+                } else {
+                    document.body.style.fontSize = "18px";
+                }
+            }
+    
+          
+        </script>
         
 
 
-<footer><p style="text-align: center">© 2024 SkillBridge Education Centre. All rights reserved.</p></footer>       
+
 </body>
 </html>
