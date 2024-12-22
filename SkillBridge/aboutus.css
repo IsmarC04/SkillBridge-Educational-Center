@@ -1,0 +1,35 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+   margin: 0; 
+   
+}
+
+#first {
+ background-color:#000B58;
+ text-align: center;
+}
+a{color:white;
+margin: 15px;}
+
+
+fieldset{
+    border: 5px solid #006A67;
+    border-radius: 20px;
+    padding: 20px;
+margin-bottom: 40px;}
+
+footer{
+    background-color: #FFF4B7;
+    padding: 10px;
+    text-align: center;
+    margin: 0;
+}
+
+.button {
+    text-align: center; 
+    margin: 20px; 
+    margin: 10px; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer;
+}
