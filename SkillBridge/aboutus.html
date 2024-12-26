@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About us</title>
+   <link rel="stylesheet" href="aboutus.css">
 </head>
 <body>
+    <div id="first">
     <h1 >
         <img src="/SkillBridge logo 2.jpg" alt="LOGO" width="450" height="150"></h1>
         <a href="http://127.0.0.1:5500/SkillBridge/Assignment1.html">Home</a>
-        <a href="http://127.0.0.1:5500/SkillBridge/aboutus.html"><b>About Us</b></a>
+        <a href="http://127.0.0.1:5500/SkillBridge/aboutus.html">About Us</a>
         <a href="http://127.0.0.1:5500/SkillBridge/ContactUs.html">Contact Us</a>
+        <a href="http://127.0.0.1:5500/SkillBridge/Courses.html">Courses</a>
         <hr>
+    </div>
 
 <h2>About Us</h2>
 <p>Welcome to SkillBridge Education Centre! We are delighted to have you and your family join our community. Our mission is to provide a nurturing and stimulating environment that fosters curiosity and a love of learning in every child.</p>
@@ -49,6 +53,33 @@
             </fieldset>
         </div>
     <br>
-    <footer style="background-color: aqua;" ><p style="text-align: center;">© 2024 SkillBridge Education Centre. All rights reserved.</p></footer>
+
+    <div class="button">
+   
+        <button onclick="changeTheme('dark')">Dark Theme</button>
+        <button onclick="changeTheme('light')">Light Theme</button>
+        <button onclick="changeFontSize('small')">Small Font</button>
+        <button onclick="changeFontSize('large')">Large Font</button>
+        </div>
+        <footer style="background-color: aqua;" ><p style="text-align: center;">© 2024 SkillBridge Education Centre. All rights reserved.</p></footer>
+<script>function changeTheme(theme) {
+    if (theme === 'dark') {
+        document.body.style.backgroundColor = "#333";
+        document.body.style.color = "#fff";
+    } else {
+        document.body.style.backgroundColor = "#fff";
+        document.body.style.color = "#000";
+    }
+}
+
+function changeFontSize(size) {
+    if (size === 'small') {
+        document.body.style.fontSize = "12px";
+    } else {
+        document.body.style.fontSize = "18px";
+    }
+}
+</script>
+        
 </body>
 </html>
